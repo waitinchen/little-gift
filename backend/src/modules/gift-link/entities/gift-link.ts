@@ -25,6 +25,14 @@ export class GiftLink {
 
   @Column({ type: "timestamptz", nullable: true }) redeemed_at: Date;
 
+  // 关联送礼者（用户）
+  @Column({ nullable: true })
+  sender_id: number;
+
+  // 关联收礼者（用户）
+  @Column({ nullable: true })
+  recipient_id: number;
+
   @Column({ type: "timestamptz", default: () => "now()" }) created_at: Date;
   @Column({ type: "timestamptz", default: () => "now()" }) updated_at: Date;
 }

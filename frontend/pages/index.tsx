@@ -1,12 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { authStorage } from '@/lib/api';
 
 export default function Home() {
   const router = useRouter();
   const [target, setTarget] = useState('');
   const [budget, setBudget] = useState('');
   const [occasion, setOccasion] = useState('');
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // 检查用户登录状态
+    const userInfo = authStorage.getUser();
+    const token = authStorage.getToken();
+    
+    if (userInfo && token) {
+      setUser(userInfo);
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleSearch = () => {
     if (target && budget) {
@@ -26,6 +40,45 @@ export default function Home() {
       <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
         {/* Header */}
         <div className="container mx-auto px-4 py-8">
+          {/* 用户状态栏 */}
+          <div className="flex justify-between items-center mb-8">
+            <div></div>
+            <div className="flex items-center space-x-4">
+              {isLoggedIn ? (
+                <div className="flex items-center space-x-3">
+                  <span className="text-neutral-600">
+                    欢迎，{user?.first_name || user?.email}
+                  </span>
+                  <button
+                    onClick={() => {
+                      authStorage.clear();
+                      setIsLoggedIn(false);
+                      setUser(null);
+                    }}
+                    className="text-sm text-neutral-500 hover:text-neutral-700"
+                  >
+                    登出
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center space-x-3">
+                  <button
+                    onClick={() => router.push('/login')}
+                    className="text-sm text-neutral-600 hover:text-primary-500"
+                  >
+                    登录
+                  </button>
+                  <button
+                    onClick={() => router.push('/register')}
+                    className="btn-primary text-sm px-4 py-2"
+                  >
+                    注册
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-primary-500 mb-4">
               🎁 小禮子

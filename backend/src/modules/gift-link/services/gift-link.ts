@@ -3,7 +3,11 @@ import { EntityManager, Repository } from "typeorm";
 import { GiftLink } from "../entities/gift-link";
 import { v4 as uuid } from "uuid";
 
-type CreateInput = { orderId: string };
+type CreateInput = { 
+  orderId: string;
+  senderId?: number;
+  recipientId?: number;
+};
 type RedeemInput = {
   token: string;
   recipient_name: string;
@@ -26,12 +30,14 @@ export default class GiftLinkService extends TransactionBaseService {
     this.giftRepo_ = container.manager.getRepository(GiftLink);
   }
 
-  async create({ orderId }: CreateInput): Promise<GiftLink> {
+  async create({ orderId, senderId, recipientId }: CreateInput): Promise<GiftLink> {
     const token = uuid().replace(/-/g, "");
     const gl = this.giftRepo_.create({ 
       token, 
       order_id: orderId, 
-      status: "waiting" 
+      status: "waiting",
+      sender_id: senderId,
+      recipient_id: recipientId
     });
     return await this.giftRepo_.save(gl);
   }
