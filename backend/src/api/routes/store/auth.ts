@@ -11,7 +11,7 @@ export default (app: Router) => {
 
     if (!email || !password) {
       return res.status(400).json({ 
-        error: "邮箱和密码为必填项",
+        error: "電子郵件和密碼為必填項",
         code: "MISSING_REQUIRED_FIELDS"
       });
     }
@@ -20,7 +20,7 @@ export default (app: Router) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ 
-        error: "邮箱格式不正确",
+        error: "電子郵件格式不正確",
         code: "INVALID_EMAIL_FORMAT"
       });
     }
@@ -28,7 +28,7 @@ export default (app: Router) => {
     // 验证密码强度
     if (password.length < 6) {
       return res.status(400).json({ 
-        error: "密码长度至少6位",
+        error: "密碼長度至少6位",
         code: "WEAK_PASSWORD"
       });
     }

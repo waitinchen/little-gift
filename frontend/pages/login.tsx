@@ -43,7 +43,7 @@ export default function LoginPage() {
   return (
     <>
       <Head>
-        <title>登录 - 小禮子</title>
+        <title>登入 - 小禮子</title>
       </Head>
 
       <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white flex items-center justify-center">
@@ -53,7 +53,7 @@ export default function LoginPage() {
               <h1 className="text-3xl font-bold text-primary-500 mb-2">
                 🎁 小禮子
               </h1>
-              <p className="text-neutral-500">欢迎回来</p>
+              <p className="text-neutral-500">歡迎回來</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -65,7 +65,7 @@ export default function LoginPage() {
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  邮箱
+                  電子郵件
                 </label>
                 <input
                   type="email"
@@ -74,13 +74,13 @@ export default function LoginPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="请输入邮箱"
+                  placeholder="請輸入電子郵件"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  密码
+                  密碼
                 </label>
                 <input
                   type="password"
@@ -89,7 +89,7 @@ export default function LoginPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="请输入密码"
+                  placeholder="請輸入密碼"
                 />
               </div>
 
@@ -98,18 +98,18 @@ export default function LoginPage() {
                 disabled={loading}
                 className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? '登录中...' : '登录'}
+                {loading ? '登入中...' : '登入'}
               </button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-neutral-500">
-                还没有账号？{' '}
+                還沒有帳號？{' '}
                 <button
                   onClick={() => router.push('/register')}
                   className="text-primary-500 hover:text-primary-700 font-medium"
                 >
-                  立即注册
+                  立即註冊
                 </button>
               </p>
             </div>

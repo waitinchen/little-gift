@@ -58,7 +58,7 @@ export default function SelectPage() {
   return (
     <>
       <Head>
-        <title>AI 推荐结果 - 小禮子</title>
+        <title>AI 推薦結果 - 小禮子</title>
       </Head>
 
       <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
@@ -72,11 +72,11 @@ export default function SelectPage() {
               ← 返回
             </button>
             <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-              🤖 AI 为您精选的礼物
+              🤖 AI 為您精選的禮物
             </h1>
             <p className="text-neutral-500">
-              送给：{target} | 预算：Ｄ{budget}
-              {occasion && ` | 场合：${occasion}`}
+              送給：{target} | 預算：${budget}
+              {occasion && ` | 場合：${occasion}`}
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export default function SelectPage() {
           {loading && (
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary-500 border-t-transparent"></div>
-              <p className="mt-4 text-neutral-500">AI 正在为您精心挑选...</p>
+              <p className="mt-4 text-neutral-500">AI 正在為您精心挑選...</p>
             </div>
           )}
 
@@ -104,7 +104,7 @@ export default function SelectPage() {
                     {gift.name}
                   </h3>
                   <p className="text-primary-500 font-bold text-xl mb-3">
-                    Ｄ{gift.price}
+                    ${gift.price}
                   </p>
                   <p className="text-neutral-600 text-sm">
                     💡 {gift.reason}
@@ -118,7 +118,7 @@ export default function SelectPage() {
           {!loading && gifts.length === 0 && (
             <div className="text-center py-12">
               <p className="text-neutral-500">
-                暂无符合条件的礼物，请调整搜索条件。
+                暫無符合條件的禮物，請調整搜尋條件。
               </p>
             </div>
           )}

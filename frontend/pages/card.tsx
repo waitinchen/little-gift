@@ -49,7 +49,7 @@ export default function CardPage() {
   return (
     <>
       <Head>
-        <title>卡片预览 - 小禮子</title>
+        <title>卡片預覽 - 小禮子</title>
       </Head>
 
       <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white">

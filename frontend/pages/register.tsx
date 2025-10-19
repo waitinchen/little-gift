@@ -66,7 +66,7 @@ export default function RegisterPage() {
   return (
     <>
       <Head>
-        <title>注册 - 小禮子</title>
+        <title>註冊 - 小禮子</title>
       </Head>
 
       <main className="min-h-screen bg-gradient-to-b from-primary-50 to-white flex items-center justify-center py-8">
@@ -76,7 +76,7 @@ export default function RegisterPage() {
               <h1 className="text-3xl font-bold text-primary-500 mb-2">
                 🎁 小禮子
               </h1>
-              <p className="text-neutral-500">创建您的账号</p>
+              <p className="text-neutral-500">創建您的帳號</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -117,7 +117,7 @@ export default function RegisterPage() {
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  邮箱 *
+                  電子郵件 *
                 </label>
                 <input
                   type="email"
@@ -126,13 +126,13 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="请输入邮箱"
+                  placeholder="請輸入電子郵件"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  手机号
+                  手機號碼
                 </label>
                 <input
                   type="tel"
@@ -140,13 +140,13 @@ export default function RegisterPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="请输入手机号"
+                  placeholder="請輸入手機號碼"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  密码 *
+                  密碼 *
                 </label>
                 <input
                   type="password"
@@ -155,13 +155,13 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="至少6位密码"
+                  placeholder="至少6位密碼"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  确认密码 *
+                  確認密碼 *
                 </label>
                 <input
                   type="password"
@@ -170,7 +170,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="再次输入密码"
+                  placeholder="再次輸入密碼"
                 />
               </div>
 
@@ -179,18 +179,18 @@ export default function RegisterPage() {
                 disabled={loading}
                 className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? '注册中...' : '注册'}
+                {loading ? '註冊中...' : '註冊'}
               </button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-neutral-500">
-                已有账号？{' '}
+                已有帳號？{' '}
                 <button
                   onClick={() => router.push('/login')}
                   className="text-primary-500 hover:text-primary-700 font-medium"
                 >
-                  立即登录
+                  立即登入
                 </button>
               </p>
             </div>
