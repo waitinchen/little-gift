@@ -127,7 +127,7 @@ export default function Home() {
                     <span className="text-5xl">🎁</span>
                   </div>
                   <h3 className="font-medium text-neutral-900 mb-2">{gift.name}</h3>
-                  <p className="text-primary-500 font-bold">Ｄ{gift.price}</p>
+                  <p className="text-primary-500 font-bold">¥{gift.price}</p>
                 </div>
               ))}
             </div>
